@@ -3,6 +3,7 @@ import App from './App.vue';
 import echarts from '@/plugins/echarts';
 import '../node_modules/echarts/map/js/china';
 import '@/assets/css/common.css';
+import { router } from '@/router';
 
 // import china from 'echarts/map/json/china.json';
 // echarts.registerMap('china', china);
@@ -17,12 +18,11 @@ Vue.config.productionTip = false;
 // }).$mount('#app')
 
 new Vue({
-  // router,
+  router,
   // store,
   render: (h) => h(App),
   created() {
     // 实例创建完成后被立即调用rem换算方法,解决内容闪现问题
-
     if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
       setRem();
       window.addEventListener('resize', setRem); //浏览器窗口大小改变时调用rem换算方法
@@ -33,6 +33,7 @@ new Vue({
   }
 }).$mount('#app');
 
+// rem适配：
 // 手机端
 function setRem() {
   var whdef = 100 / 750; // 表示750的设计图,使用100PX的默认值

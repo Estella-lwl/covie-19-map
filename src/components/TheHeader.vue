@@ -8,7 +8,7 @@
 // import { getNcov } from '../api/index';
 
 export default {
-  name: 'Header',
+  name: 'TheHeader',
   components: {},
   data() {
     return {
