@@ -430,6 +430,9 @@ const install = function (Vue) {
             let option = {
               title: {
                 text: '全国主要城市空气质量 - 百度地图',
+                textStyle: {
+                  color: '#aaa'
+                },
                 subtext: 'data from PM25.in',
                 sublink: 'http://www.pm25.in',
                 left: 'center'

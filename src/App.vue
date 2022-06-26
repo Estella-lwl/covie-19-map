@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <Home ref="headerRefs"></Home>
+    <TheHome ref="headerRefs"> </TheHome>
   </div>
 </template>
 
 <script>
-import Home from './pages/Home/index';
+import TheHome from './pages/TheHome/index';
 export default {
   name: 'App',
   components: {
-    Home
+    TheHome
   }
 };
 </script>
