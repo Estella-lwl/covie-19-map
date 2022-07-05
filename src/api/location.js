@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const base = {
-  baseUrl: 'http://api.tianapi.com',
+  baseUrl: 'http://api.map.baidu.com',
   // timeout: ''
-  ncov: '/ncov/index'
+  ncov: '/geoconv/v1'
 };
 
 /* 
-疫情数据
+百度地图-定位数据
  */
 const api = {
-  getDiseaseData(params) {
+  getCurrentCity(params) {
     return axios.get(base.baseUrl + base.ncov, {
       params
     });
@@ -19,7 +19,7 @@ const api = {
 
 export default api;
 
-export function getDiseaseData(params) {
+export function getCurrentCity(params) {
   return axios.get(base.baseUrl + base.ncov, {
     params
   });

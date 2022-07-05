@@ -2,17 +2,31 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-// 懒加载方式导入：
-const TheHome = () => import('@/pages/TheHome/index.vue');
-const TheVision = () => import('@/pages/TheVision/index.vue');
-// const TheHome = () => import('@/pages/TheHome');
-// const TheHome = () => import('@/pages/TheHome');
-
 // 使用：
 Vue.use(VueRouter);
 
 // 配置路由映射关系：
 const routes = [
+  // {
+  //   path: '/',
+  //   name: 'index',
+  //   redirect: '/TheHome',
+  //   component: TheHome,
+  //   children: [
+  //     {
+  //       path: '/TheHome',
+  //       name: 'TheHome',
+  //       component: () => import('@/pages/TheHome/index.vue')
+  //     },
+
+  //     {
+  //       path: '/TheVision/index',
+  //       name: 'TheVision',
+  //       component: () => import('@/pages/TheVision/index.vue')
+  //     }
+  //   ]
+  // }
+
   {
     path: '',
     redirect: '/TheHome'
@@ -20,13 +34,17 @@ const routes = [
 
   {
     path: '/TheHome',
-    // redirect: '/TheHome',
-    components: { TheHome }
+    component: () => import('@/pages/TheHome/index.vue')
   },
 
   {
     path: '/TheVision',
-    components: { TheVision }
+    component: () => import('@/pages/TheVision/index.vue')
+  },
+
+  {
+    path: '/DetailMsg',
+    component: () => import('@/pages/DetailMsg/index.vue')
   }
 ];
 

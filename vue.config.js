@@ -16,23 +16,22 @@ module.exports = {
 };
 
 module.exports = defineConfig({
-  // transpileDependencies: true,
-  // lintOnSave: false //关闭语法检查
-  // // devServer: {
-  // //   proxy: {
-  // //     ws: false
-  // //   }
-  // // }
-
-  publicPath: './',
-  lintOnSave: false, // 关闭语法检查
+  transpileDependencies: true,
+  lintOnSave: false, //关闭语法检查
   devServer: {
-    proxy: {
-      '/': {
-        target: 'http://localhost:3000/', // 本地后端地址
-        changeOrigin: true, //允许跨域
-        ws: false
-      }
-    }
+    proxy: 'http://localhost:8080'
   }
+
+  // publicPath: './',
+  // lintOnSave: false, // 关闭语法检查
+  // devServer: {
+  //   // 暂时关掉:
+  //   // proxy: {
+  //   //   '/': {
+  //   //     target: 'http://localhost:3000/', // 本地后端地址
+  //   //     changeOrigin: true, //允许跨域
+  //   //     ws: false
+  //   //   }
+  //   // }
+  // }
 });

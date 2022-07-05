@@ -1,6 +1,8 @@
 * {
   padding: 0;
   margin: 0;
+  /* font-family:; */
+  /* font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif; */
 }
 
 img,
@@ -29,4 +31,41 @@ textarea {
 li,
 ol {
   list-style: none;
+}
+
+/* body样式谨慎写！！会影响很多 */
+/* body {
+  width: 7.5rem;
+  font-size: 0.28rem;
+} */
+
+body {
+  font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+#common-page {
+  position: relative;
+  width: 7.5rem;
+  height: 17rem;
+  overflow: hidden;
+  background: url('@/assets/bg.jpg') no-repeat center;
+  /* background: url('https://s2.loli.net/2022/07/02/21TLyMvxdDCHeji.jpg') no-repeat center; */
+  background-size: cover;
+  color: #fff;
+  font-size: 0.3rem;
+}
+
+.msg-page {
+  position: relative;
+  width: 7.5rem;
+  /* height: 18rem; */
+  overflow: hidden;
+  color: #fff;
+  font-size: 0.3rem;
+
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
 }
