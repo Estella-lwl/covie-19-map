@@ -4,40 +4,38 @@
       <h2>Detail Page</h2>
       <p>
         <span>数据更新时间：</span>
-        <span>{{ dateFormat(detailData.dataUpdateTime) }}</span>
+        <span>{{ dateFormat(newsData.dataUpdateTime) }}</span>
       </p>
     </div>
 
     <div class="msgBox">
       <ul class="msgList">
         <li>
+          <p class="sortName">新增境外输入人数</p>
+          <p class="personNum" :style="{ color: setNumColor(descData.suspectedIncr) }">→{{ descData.suspectedIncr }}</p>
+        </li>
+        <li>
           <p>
-            <span class="sortName">全球疫情数据</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
+            <span class="sortName">累计境外输入人数</span>
+            <span class="personNum" :style="{ color: setNumColor(descData.suspectedCount) }">{{ descData.suspectedCount }}</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sortName">国内人数</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
+            <span class="sortName">现存确诊人数</span>
+            <span class="personNum" :style="{ color: setNumColor(descData.currentConfirmedCount) }">{{ descData.currentConfirmedCount }}</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sortName">国内人数</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
-          </p>
-        </li>
-        <li>
-          <p>
-            <span class="sortName">国内人数</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
+            <span class="sortName">现存无症状人数</span>
+            <span class="personNum" :style="{ color: setNumColor(descData.seriousCount) }">{{ descData.seriousCount }}</span>
           </p>
         </li>
         <li>
           <p>
             <span class="sortName"> </span>
-            <span class="personNum" :style="{ color: numColorAssign }"> </span>
+            <span class="personNum" :style="{ color: setNumColor() }"> </span>
           </p>
         </li>
       </ul>
@@ -47,32 +45,32 @@
       <ul class="msgList">
         <li>
           <p>
-            <span class="sortName">全球疫情数据</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
+            <span class="sortName">累计确诊人数</span>
+            <span class="personNum" :style="{ color: setNumColor(descData.confirmedCount) }">{{ descData.confirmedCount }}</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sortName">国内人数</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
+            <span class="sortName">累计治愈人数</span>
+            <span class="personNum" :style="{ color: setNumColor(descData.curedCount) }">{{ descData.curedCount }}</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sortName">国内人数</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
+            <span class="sortName">累计死亡人数</span>
+            <span class="personNum" :style="{ color: setNumColor(descData.deadCount) }">{{ descData.deadCount }}</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sortName">国内人数</span>
-            <span class="personNum" :style="{ color: numColorAssign }">{{ detailData }}</span>
+            <span class="sortName">国内高风险地区个数</span>
+            <span class="personNum" :style="{ color: setNumColor(descData.highDangerCount) }">{{ descData.highDangerCount }}</span>
           </p>
         </li>
         <li>
           <p>
             <span class="sortName"> </span>
-            <span class="personNum" :style="{ color: numColorAssign }"> </span>
+            <span class="personNum" :style="{ color: setNumColor() }"> </span>
           </p>
         </li>
       </ul>
@@ -87,13 +85,25 @@ export default {
   name: 'DetailMsg',
   data() {
     return {
-      detailData: {
+      //  国内疫情资讯列表
+      newsData: {
         dataUpdateTime: '', // 数据更新时间
         globalStatistics: {} // 全球疫情统计数据
       },
-      numType: '',
-      // 数字动态颜色
-      numColorAssign: ''
+      // 国内外疫情综合数据
+      descData: {
+        suspectedIncr: '',
+        suspectedCount: '',
+        currentConfirmedCount: '',
+        seriousCount: '',
+        confirmedCount: '',
+        curedCount: '',
+        deadCount: '',
+        highDangerCount: ''
+      },
+      // 风险地区对象
+      riskAreaData: {},
+      numType: ''
     };
   },
 
@@ -102,9 +112,13 @@ export default {
     getDiseaseData(key)
       .then((res) => {
         if (res.status === 200) {
-          console.log('res:', res.data);
-          this.detailData = Object.assign(res.data, {});
-          this.detailData.dataUpdateTime = res.data.newslist[0].desc.modifyTime;
+          console.log('res.data:', res.data);
+          // this.data = Object.assign(res.data.newslist[0], {});
+          this.descData = Object.assign(res.data.newslist[0].desc, {});
+          this.newsData = Object.assign(res.data.newslist[0].news, {});
+          this.riskAreaData = Object.assign(res.data.newslist[0].riskarea, {});
+
+          this.newsData.dataUpdateTime = res.data.newslist[0].desc.modifyTime;
         }
       })
       .catch((err) => {
@@ -112,27 +126,12 @@ export default {
       });
 
     // this.dateFormat();
-
-    // 根据数字决定字体颜色：
-    console.log('', typeof this.detailData);
-
-    if (this.detailData > 10000) {
-      this.numColorAssign = '#FF0000';
-    } else if (this.detailData > 1000) {
-      this.numColorAssign = '#FFA500';
-    } else if (this.detailData > 100) {
-      this.numColorAssign = '#87CEFA';
-    } else if (this.detailData > 10) {
-      this.numColorAssign = '#C71585';
-    } else if (this.detailData > 0) {
-      this.numColorAssign = '#fff';
-    }
   },
 
   methods: {
     // 日期格式化：
     dateFormat() {
-      const date = new Date(this.detailData.dataUpdateTime);
+      const date = new Date(this.newsData.dataUpdateTime);
       const YY = date.getFullYear() + '-';
       // 小于10前面补0：
       const MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
@@ -141,6 +140,19 @@ export default {
       const mm = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
 
       return YY + MM + DD + hh + mm;
+    },
+
+    // 数字动态颜色：
+    setNumColor(val) {
+      if (val > 3000) {
+        return '#FF0000';
+      } else if (val > 1000) {
+        return '#FFA500';
+      } else if (val > 500) {
+        return '#87CEFA';
+      } else if (val > 0) {
+        return '#C71585';
+      }
     }
   }
 };
@@ -172,15 +184,15 @@ export default {
 }
 .msgList li {
   /* margin: 0.2rem; */
-  line-height: 0.9rem;
+  line-height: 0.7rem;
   width: 3rem;
-  /* height: 0.9rem; */
 }
 .sortName {
   font-size: 0.3rem;
 }
 .personNum {
-  color: #123;
+  display: inline-block;
+  color: #fff;
   font-size: 0.5rem;
   /* baseline: bottom; */
 }
