@@ -7,26 +7,6 @@ Vue.use(VueRouter);
 
 // 配置路由映射关系：
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'index',
-  //   redirect: '/TheHome',
-  //   component: TheHome,
-  //   children: [
-  //     {
-  //       path: '/TheHome',
-  //       name: 'TheHome',
-  //       component: () => import('@/pages/TheHome/index.vue')
-  //     },
-
-  //     {
-  //       path: '/TheVision/index',
-  //       name: 'TheVision',
-  //       component: () => import('@/pages/TheVision/index.vue')
-  //     }
-  //   ]
-  // }
-
   {
     path: '',
     redirect: '/TheHome'
@@ -38,14 +18,19 @@ const routes = [
   },
 
   {
-    path: '/TheVision',
-    component: () => import('@/pages/TheVision/index.vue')
+    path: '/SwitchVision',
+    component: () => import('@/pages/SwitchVision/index.vue')
   },
 
   {
-    path: '/DetailMsg',
-    component: () => import('@/pages/DetailMsg/index.vue')
+    path: '/DataPage',
+    component: () => import('@/pages/DataPage/index.vue')
   }
+
+  // {
+  //   path: '/DetailMsg',
+  //   component: () => import('@/pages/DetailMsg/index.vue')
+  // }
 ];
 
 // 创建路由对象 & 暴漏：

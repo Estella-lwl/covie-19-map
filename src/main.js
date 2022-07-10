@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import echarts from '@/plugins/echarts';
 import '../node_modules/echarts/map/js/china';
+import '../node_modules/echarts/map/js/world';
 import '@/assets/css/common.css';
 import { router } from '@/router';
 

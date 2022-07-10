@@ -28,7 +28,7 @@ export default {
   },
   // mounted() {
   //   const key = {};
-  //   getDiseaseData(key).then((res) => {
+  //   getNcov(key).then((res) => {
   //     console.log('res', res);
   //   });
   // },
@@ -46,7 +46,6 @@ export default {
   methods: {
     // 侧边栏切换
     switchView() {
-      console.log('已点击');
       // 跳转的路由不能写死，而是通过props获取外部传进来的值，动态改变：
       this.$router.replace(this.link);
       console.log('link: ', this.link);

@@ -3,7 +3,7 @@
     {{ data.newList }}
     <!-- <TheHome></TheHome> -->
     <SideBar ref="">
-      <SideBarItem :test="test" link="/TheHome">
+      <SideBarItem link="/TheHome">
         <!-- 顶替掉插槽的位置（具名插槽）： -->
         <!-- TODO: 对比以下两行： -->
         <template #item-icon>
@@ -32,7 +32,7 @@
         </template>
       </SideBarItem>
 
-      <SideBarItem link="/DetailMsg">
+      <SideBarItem link="/SwitchVision">
         <template #item-icon>
           <div>
             <p>
@@ -116,26 +116,7 @@ export default {
     };
   },
 
-  mounted() {
-    this.test();
-
-    // const key = { key: '449d6762d7a0ef0bce89f7d25b2dad15' };
-    // getDiseaseData(key)
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     this.data = Object.assign(res.data, {});
-    //     console.log('data', this.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log('err', err);
-    //   });
-  },
-
-  methods: {
-    test() {
-      //
-    }
-  }
+  methods: {}
 };
 </script>
 

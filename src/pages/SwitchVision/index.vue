@@ -1,25 +1,16 @@
 <template>
-  <div class="msg-page">
-    <!-- 当前城市详细数据： -->
-    <h2>The Vision</h2>
-
-    <div>
-      <TheHeader>
-        <div id="allMap"></div>
-      </TheHeader>
-    </div>
+  <div id="common-page">
+    <div id="echarts-earth-container"></div>
   </div>
 </template>
 
-<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=03WWMsFh7PWtCdmgS91qnsWH4gRz57Ww"></script>
 <script>
-import TheHeader from '@/components/TheHeader.vue';
-import { getCurrentCity } from '@/api/location';
+// import { getCurrentCity } from '@/api/location';
 
 export default {
-  name: 'TheVision',
+  name: 'SwitchVision',
   components: {
-    TheHeader
+    // TheHeader
   },
 
   data() {
@@ -30,6 +21,8 @@ export default {
   },
 
   mounted() {
+    this.$echarts.worldMap('echarts-earth-container');
+
     // this.getLocation();
     // getCurrentCity()
     // 百度地图API功能
@@ -110,5 +103,15 @@ html,
   overflow: hidden;
   margin: 0;
   font-family: '微软雅黑';
+}
+#earth-page {
+  width: 10rem;
+  height: 18rem;
+}
+#echarts-earth-container {
+  position: absolute;
+  z-index: 333;
+  width: 7.5rem;
+  height: 8rem;
 }
 </style>

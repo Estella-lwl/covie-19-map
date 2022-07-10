@@ -58,9 +58,10 @@ body {
 .msg-page {
   position: relative;
   width: 7.5rem;
-  /* height: 18rem; */
+  /* height: 30rem; */
   overflow: hidden;
   color: #fff;
+  /* background-color: #fff; */
   font-size: 0.3rem;
 
 }

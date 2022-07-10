@@ -9,7 +9,7 @@ const base = {
 /* 
 疫情数据
  */
-const api = {
+export const api = {
   getDiseaseData(params) {
     return axios.get(base.baseUrl + base.ncov, {
       params
@@ -17,7 +17,7 @@ const api = {
   }
 };
 
-export default api;
+// export default api;
 
 export function getDiseaseData(params) {
   return axios.get(base.baseUrl + base.ncov, {
