@@ -5,10 +5,7 @@
 </template>
 
 <script>
-import { getDiseaseData } from '@/api/index';
-
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
   name: 'SideBar',
   components: {},
   data() {

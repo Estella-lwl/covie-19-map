@@ -7,12 +7,18 @@
 </template>
 
 <script>
-import { getDiseaseData } from '@/api';
+// import { getCityData } from '@/api/index';
 
 export default {
   name: 'EchartsChinaMap',
   data() {
     return {};
+  },
+
+  created() {
+    // getCityData({ key: '62e34ad34025d5d5127135efa58d4ca' }).then((res) => {
+    //   console.log('res:', res);
+    // });
   },
 
   mounted() {

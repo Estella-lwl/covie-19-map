@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { getDiseaseData } from '@/api';
+import { getDiseaseData } from '@/api/index';
 
 export default {
   name: 'EchartsWorldMap',
@@ -12,6 +12,7 @@ export default {
       //
     };
   },
+
   mounted() {
     this.$echarts.worldMap('echarts-world-container');
   }

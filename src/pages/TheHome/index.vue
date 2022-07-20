@@ -1,15 +1,18 @@
 <template>
   <div id="common-page">
-    <div id="echarts-container"></div>
+    <!-- <div id="echarts-container"></div> -->
+    <EchartsChinaMap></EchartsChinaMap>
   </div>
 </template>
 
 <script>
-import { getDiseaseData } from '@/api';
+import EchartsChinaMap from '@/components/EchartsChinaMap.vue';
 
 export default {
   name: 'TheHome',
-  components: {},
+  components: {
+    EchartsChinaMap
+  },
   data() {
     return {
       data: {},
@@ -18,9 +21,12 @@ export default {
     };
   },
 
-  mounted() {
-    this.$echarts.chinaMap('echarts-container');
+  created() {
+    //
+  },
 
+  mounted() {
+    // this.$echarts.chinaMap('echarts-container');
     // const key = { key: '449d6762d7a0ef0bce89f7d25b2dad15' };
     // getDiseaseData(key)
     //   .then((res) => {

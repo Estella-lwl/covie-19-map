@@ -107,7 +107,8 @@
 
 <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=03WWMsFh7PWtCdmgS91qnsWH4gRz57Ww"></script>
 <script>
-import { getDiseaseData } from '@/api/index';
+import { getDiseaseData } from '@/api/index.js';
+import { getProvinceOverall } from '@/api/province';
 
 export default {
   name: 'DataPage',
@@ -137,6 +138,14 @@ export default {
   },
 
   created() {
+    getProvinceOverall({ latest: 1 })
+      .then((res) => {
+        console.log('res', res);
+      })
+      .catch((err) => {
+        console.log('err', err);
+      });
+
     const key = { key: '449d6762d7a0ef0bce89f7d25b2dad15' };
     getDiseaseData(key)
       .then((res) => {

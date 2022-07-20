@@ -14,10 +14,6 @@ Vue.use(echarts);
 
 Vue.config.productionTip = false;
 
-// new Vue({
-//   render: h => h(App),
-// }).$mount('#app')
-
 new Vue({
   router,
   // store,
@@ -29,7 +25,7 @@ new Vue({
       window.addEventListener('resize', setRem); //浏览器窗口大小改变时调用rem换算方法
     } else {
       setRemPC();
-      window.addEventListener('resize', setRemPc); //浏览器窗口大小改变时调用rem换算方法
+      window.addEventListener('resize', setRemPC); //浏览器窗口大小改变时调用rem换算方法
     }
   }
 }).$mount('#app');

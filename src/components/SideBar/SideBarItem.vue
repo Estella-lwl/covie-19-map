@@ -17,21 +17,13 @@ export default {
     link: {
       type: String,
       require: true
-      // default: '/TheHome'
-    } // 或者叫path
-    // default: '11'
+    }
   },
   data() {
     return {
       //
     };
   },
-  // mounted() {
-  //   const key = {};
-  //   getNcov(key).then((res) => {
-  //     console.log('res', res);
-  //   });
-  // },
 
   // TODO:找到路由的讲解，着重是父子组件，看数据传输对不对
 
@@ -46,8 +38,14 @@ export default {
   methods: {
     // 侧边栏切换
     switchView() {
+      // 避免重复跳转导致警告：
+      const path = this.$route.path;
+      if (path !== this.link) {
+        this.$router.replace(this.link);
+      } else {
+        console.log('请勿重复点击');
+      }
       // 跳转的路由不能写死，而是通过props获取外部传进来的值，动态改变：
-      this.$router.replace(this.link);
       console.log('link: ', this.link);
     }
   }
