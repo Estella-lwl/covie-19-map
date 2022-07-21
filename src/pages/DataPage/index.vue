@@ -13,19 +13,31 @@
         <li>
           <p>
             <span class="sortName">新增境外输入人数 &nbsp;&nbsp;</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.suspectedIncr) }">{{ descData.suspectedIncr }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.suspectedIncr) }"
+              >{{ descData.suspectedIncr }}</span
+            >
           </p>
         </li>
         <li>
           <p>
             <span class="sortName">累计境外输入人数 &nbsp;&nbsp;</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.suspectedCount) }">{{ descData.suspectedCount }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.suspectedCount) }"
+              >{{ descData.suspectedCount }}</span
+            >
           </p>
         </li>
         <li>
           <p>
             <span class="sortName">国内高风险地区个数 &nbsp;&nbsp;</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.highDangerCount) }">{{ descData.highDangerCount }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.highDangerCount) }"
+              >{{ descData.highDangerCount }}</span
+            >
           </p>
         </li>
       </ul>
@@ -36,23 +48,36 @@
         <li>
           <p>
             <span class="sortName">现存确诊人数</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.currentConfirmedCount) }">{{ descData.currentConfirmedCount }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.currentConfirmedCount) }"
+              >{{ descData.currentConfirmedCount }}</span
+            >
           </p>
           <p>
             <span>较昨日</span>
             <br />
-            <span :style="{ color: setNumColor(descData.currentConfirmedIncr) }">{{ numSign(descData.currentConfirmedIncr) }}</span>
+            <span
+              :style="{ color: setNumColor(descData.currentConfirmedIncr) }"
+              >{{ numSign(descData.currentConfirmedIncr) }}</span
+            >
           </p>
         </li>
         <li>
           <p>
             <span class="sortName">现存无症状人数</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.seriousCount) }">{{ descData.seriousCount }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.seriousCount) }"
+              >{{ descData.seriousCount }}</span
+            >
           </p>
           <p>
             <span>较昨日</span>
             <br />
-            <span :style="{ color: setNumColor(descData.seriousIncr) }">{{ numSign(descData.seriousIncr) }}</span>
+            <span :style="{ color: setNumColor(descData.seriousIncr) }">{{
+              numSign(descData.seriousIncr)
+            }}</span>
           </p>
         </li>
       </ul>
@@ -63,34 +88,52 @@
         <li>
           <p>
             <span class="sortName">累计确诊人数</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.confirmedCount) }">{{ descData.confirmedCount }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.confirmedCount) }"
+              >{{ descData.confirmedCount }}</span
+            >
           </p>
           <p>
             <span>较昨日</span>
             <br />
-            <span :style="{ color: setNumColor(descData.confirmedIncr) }">{{ numSign(descData.confirmedIncr) }}</span>
+            <span :style="{ color: setNumColor(descData.confirmedIncr) }">{{
+              numSign(descData.confirmedIncr)
+            }}</span>
           </p>
         </li>
         <li>
           <p>
             <span class="sortName">累计治愈人数</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.curedCount) }">{{ descData.curedCount }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.curedCount) }"
+              >{{ descData.curedCount }}</span
+            >
           </p>
           <p>
             <span>较昨日</span>
             <br />
-            <span :style="{ color: setNumColor(descData.curedIncr) }">{{ numSign(descData.curedIncr) }}</span>
+            <span :style="{ color: setNumColor(descData.curedIncr) }">{{
+              numSign(descData.curedIncr)
+            }}</span>
           </p>
         </li>
         <li>
           <p>
             <span class="sortName">累计死亡人数</span>
-            <span class="personNum" :style="{ color: setNumColor(descData.deadCount) }">{{ descData.deadCount }}</span>
+            <span
+              class="personNum"
+              :style="{ color: setNumColor(descData.deadCount) }"
+              >{{ descData.deadCount }}</span
+            >
           </p>
           <p>
             <span>较昨日</span>
             <br />
-            <span :style="{ color: setNumColor(descData.deadIncr) }"> {{ numSign(descData.deadIncr) }} </span>
+            <span :style="{ color: setNumColor(descData.deadIncr) }">
+              {{ numSign(descData.deadIncr) }}
+            </span>
           </p>
         </li>
       </ul>
@@ -105,52 +148,55 @@
   </div>
 </template>
 
-<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=03WWMsFh7PWtCdmgS91qnsWH4gRz57Ww"></script>
+<script
+  type="text/javascript"
+  src="//api.map.baidu.com/api?v=2.0&ak=03WWMsFh7PWtCdmgS91qnsWH4gRz57Ww"
+></script>
 <script>
-import { getDiseaseData } from '@/api/index.js';
-import { getProvinceOverall } from '@/api/province';
+import { getDiseaseData } from "@/api/index.js";
+import { getProvinceOverall } from "@/api/province";
 
 export default {
-  name: 'DataPage',
+  name: "DataPage",
   components: {},
   data() {
     return {
       //  国内疫情资讯列表
       newsData: {
-        dataUpdateTime: '', // 数据更新时间
-        globalStatistics: {} // 全球疫情统计数据
+        dataUpdateTime: "", // 数据更新时间
+        globalStatistics: {}, // 全球疫情统计数据
       },
       // 国内外疫情综合数据
       descData: {
-        suspectedIncr: '', // 新增境外输入人数
-        suspectedCount: '', // 累计境外输入人数
-        currentConfirmedCount: '', // 现存确诊人数
-        seriousCount: '', // 现存无症状人数
-        confirmedCount: '', // 累计确诊人数
-        curedCount: '', // 累计治愈人数
-        deadCount: '', // 累计死亡人数
-        highDangerCount: '' // 国内高风险地区个数
+        suspectedIncr: "", // 新增境外输入人数
+        suspectedCount: "", // 累计境外输入人数
+        currentConfirmedCount: "", // 现存确诊人数
+        seriousCount: "", // 现存无症状人数
+        confirmedCount: "", // 累计确诊人数
+        curedCount: "", // 累计治愈人数
+        deadCount: "", // 累计死亡人数
+        highDangerCount: "", // 国内高风险地区个数
       },
       // 风险地区对象
       riskAreaData: {},
-      numType: ''
+      numType: "",
     };
   },
 
   created() {
-    getProvinceOverall({ latest: 1 })
+    getProvinceOverall()
       .then((res) => {
-        console.log('res', res);
+        console.log("res", res);
       })
       .catch((err) => {
-        console.log('err', err);
+        console.log("err", err);
       });
 
-    const key = { key: '449d6762d7a0ef0bce89f7d25b2dad15' };
+    const key = { key: "449d6762d7a0ef0bce89f7d25b2dad15" };
     getDiseaseData(key)
       .then((res) => {
         if (res.status === 200) {
-          console.log('res.data:', res.data);
+          console.log("res.data:", res.data);
           // this.data = Object.assign(res.data.newslist[0], {});
           this.descData = Object.assign(res.data.newslist[0].desc, {});
           this.newsData = Object.assign(res.data.newslist[0].news, {});
@@ -160,7 +206,7 @@ export default {
         }
       })
       .catch((err) => {
-        console.log('err', err);
+        console.log("err", err);
       });
 
     // this.dateFormat();
@@ -245,12 +291,18 @@ export default {
     // 日期格式化：
     dateFormat() {
       const date = new Date(this.newsData.dataUpdateTime);
-      const YY = date.getFullYear() + '-';
+      const YY = date.getFullYear() + "-";
       // 小于10前面补0：
-      const MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
-      const DD = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + '  ';
-      const hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
-      const mm = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+      const MM =
+        (date.getMonth() + 1 < 10
+          ? "0" + (date.getMonth() + 1)
+          : date.getMonth() + 1) + "-";
+      const DD =
+        (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) + "  ";
+      const hh =
+        (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":";
+      const mm =
+        date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
 
       return YY + MM + DD + hh + mm;
     },
@@ -259,27 +311,27 @@ export default {
     setNumColor(val) {
       if (val > 3000) {
         // return '#FF0000';
-        return '#af273e';
+        return "#af273e";
       } else if (val > 1000) {
-        return '#fc5243';
+        return "#fc5243";
       } else if (val > 500) {
-        return '#FFA500';
+        return "#FFA500";
       } else if (val > 100) {
-        return '#87CEFA';
+        return "#87CEFA";
       } else if (val > 0) {
-        return '#DDA0DD';
+        return "#DDA0DD";
       }
     },
 
     // 判断数字对应使用的符号：
     numSign(val) {
       if (val >= 0) {
-        return '↑ ' + val;
+        return "↑ " + val;
       } else {
-        return '↓ ' + val;
+        return "↓ " + val;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
