@@ -1,26 +1,25 @@
-import axios from 'axios';
+import { request } from '@/utils/request';
 
-const base = {
-  baseUrl: 'http://api.tianapi.com',
-  // timeout: ''
-  ncov: '/ncov/index'
-};
-
-/* 
-疫情数据
- */
-const api = {
-  getNcov(params) {
-    return axios.get(base.baseUrl + base.ncov, {
-      params
-    });
-  }
-};
-
-export default api;
-
-export function getNcov(params) {
-  return axios.get(base.baseUrl + base.ncov, {
-    params
+export function getDiseaseData(parameter) {
+  return request({
+    url: '/index',
+    method: 'get',
+    params: parameter
   });
 }
+
+// export function getCityData(parameter) {
+//   return request({
+//     url: '/txapi/ncovcity/index'
+//     // method: 'get',
+//     // params: parameter
+//   });
+// }
+
+// 城市数据
+// TODO: 该接口已下线，待改
+// export function getCityData(params) {
+//   return axios.get(base.baseUrl + base.covidCityData, {
+//     params
+//   });
+// }
