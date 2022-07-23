@@ -5,10 +5,7 @@
 </template>
 
 <script>
-import { getNcov } from '@/api/index';
-
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
   name: 'SideBar',
   components: {},
   data() {
@@ -31,7 +28,7 @@ body {
   right: 0.2rem;
   top: 45%;
   transform: translateY(-50%);
-  z-index: 333;
+  z-index: 444;
   /* display: flex;
   flex-direction: column; */
 }

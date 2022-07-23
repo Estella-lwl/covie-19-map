@@ -2,12 +2,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-// 懒加载方式导入：
-const TheHome = () => import('@/pages/TheHome/index.vue');
-const TheVision = () => import('@/pages/TheVision/index.vue');
-// const TheHome = () => import('@/pages/TheHome');
-// const TheHome = () => import('@/pages/TheHome');
-
 // 使用：
 Vue.use(VueRouter);
 
@@ -20,14 +14,23 @@ const routes = [
 
   {
     path: '/TheHome',
-    // redirect: '/TheHome',
-    components: { TheHome }
+    component: () => import('@/pages/TheHome/index.vue')
   },
 
   {
-    path: '/TheVision',
-    components: { TheVision }
+    path: '/SwitchVision',
+    component: () => import('@/pages/SwitchVision/index.vue')
+  },
+
+  {
+    path: '/DataPage',
+    component: () => import('@/pages/DataPage/index.vue')
   }
+
+  // {
+  //   path: '/DetailMsg',
+  //   component: () => import('@/pages/DetailMsg/index.vue')
+  // }
 ];
 
 // 创建路由对象 & 暴漏：
