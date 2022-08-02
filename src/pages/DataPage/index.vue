@@ -154,7 +154,11 @@
 ></script>
 <script>
 import { getDiseaseData } from "@/api/index.js";
-import { getProvinceOverall } from "@/api/province";
+import {
+  getProvinceOverall,
+  getProvinceCity,
+  getProvinceAreaData,
+} from "@/api/province";
 
 export default {
   name: "DataPage",
@@ -184,7 +188,23 @@ export default {
   },
 
   created() {
-    getProvinceOverall()
+    // getProvinceOverall()
+    //   .then((res) => {
+    //     console.log("res", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("err", err);
+    //   });
+
+    // getProvinceCity()
+    //   .then((res) => {
+    //     console.log("res", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("err", err);
+    //   });
+
+    getProvinceAreaData()
       .then((res) => {
         console.log("res", res);
       })
