@@ -1,7 +1,7 @@
 // 首先引入Echarts：
 // 这种引入方式会导致报错：
 // import echarts from 'echarts';
-import * as echarts from 'echarts';
+import * as echarts from "echarts";
 
 // *************通过vue对象创建echarts***************
 // 创建一个对象, 函数中传个Vue对象。括号中有两个参数：Vue对象，和一个可选的参数。
@@ -28,196 +28,196 @@ const install = function (Vue) {
             // }
 
             var data = [
-              { name: '海门', value: 9 },
-              { name: '鄂尔多斯', value: 12 },
-              { name: '招远', value: 12 },
-              { name: '舟山', value: 12 },
-              { name: '齐齐哈尔', value: 14 },
-              { name: '盐城', value: 15 },
-              { name: '赤峰', value: 16 },
-              { name: '青岛', value: 18 },
-              { name: '乳山', value: 18 },
-              { name: '金昌', value: 19 },
-              { name: '泉州', value: 21 },
-              { name: '莱西', value: 21 },
-              { name: '日照', value: 21 },
-              { name: '胶南', value: 22 },
-              { name: '南通', value: 23 },
-              { name: '拉萨', value: 24 },
-              { name: '云浮', value: 24 },
-              { name: '梅州', value: 25 },
-              { name: '文登', value: 25 },
-              { name: '上海', value: 25 },
-              { name: '攀枝花', value: 25 },
-              { name: '威海', value: 25 },
-              { name: '承德', value: 25 },
-              { name: '厦门', value: 26 },
-              { name: '汕尾', value: 26 },
-              { name: '潮州', value: 26 },
-              { name: '丹东', value: 27 },
-              { name: '太仓', value: 27 },
-              { name: '曲靖', value: 27 },
-              { name: '烟台', value: 28 },
-              { name: '福州', value: 29 },
-              { name: '瓦房店', value: 30 },
-              { name: '即墨', value: 30 },
-              { name: '抚顺', value: 31 },
-              { name: '玉溪', value: 31 },
-              { name: '张家口', value: 31 },
-              { name: '阳泉', value: 31 },
-              { name: '莱州', value: 32 },
-              { name: '湖州', value: 32 },
-              { name: '汕头', value: 32 },
-              { name: '昆山', value: 33 },
-              { name: '宁波', value: 33 },
-              { name: '湛江', value: 33 },
-              { name: '揭阳', value: 34 },
-              { name: '荣成', value: 34 },
-              { name: '连云港', value: 35 },
-              { name: '葫芦岛', value: 35 },
-              { name: '常熟', value: 36 },
-              { name: '东莞', value: 36 },
-              { name: '河源', value: 36 },
-              { name: '淮安', value: 36 },
-              { name: '泰州', value: 36 },
-              { name: '南宁', value: 37 },
-              { name: '营口', value: 37 },
-              { name: '惠州', value: 37 },
-              { name: '江阴', value: 37 },
-              { name: '蓬莱', value: 37 },
-              { name: '韶关', value: 38 },
-              { name: '嘉峪关', value: 38 },
-              { name: '广州', value: 38 },
-              { name: '延安', value: 38 },
-              { name: '太原', value: 39 },
-              { name: '清远', value: 39 },
-              { name: '中山', value: 39 },
-              { name: '昆明', value: 39 },
-              { name: '寿光', value: 40 },
-              { name: '盘锦', value: 40 },
-              { name: '长治', value: 41 },
-              { name: '深圳', value: 41 },
-              { name: '珠海', value: 42 },
-              { name: '宿迁', value: 43 },
-              { name: '咸阳', value: 43 },
-              { name: '铜川', value: 44 },
-              { name: '平度', value: 44 },
-              { name: '佛山', value: 44 },
-              { name: '海口', value: 44 },
-              { name: '江门', value: 45 },
-              { name: '章丘', value: 45 },
-              { name: '肇庆', value: 46 },
-              { name: '大连', value: 47 },
-              { name: '临汾', value: 47 },
-              { name: '吴江', value: 47 },
-              { name: '石嘴山', value: 49 },
-              { name: '沈阳', value: 50 },
-              { name: '苏州', value: 50 },
-              { name: '茂名', value: 50 },
-              { name: '嘉兴', value: 51 },
-              { name: '长春', value: 51 },
-              { name: '胶州', value: 52 },
-              { name: '银川', value: 52 },
-              { name: '张家港', value: 52 },
-              { name: '三门峡', value: 53 },
-              { name: '锦州', value: 54 },
-              { name: '南昌', value: 54 },
-              { name: '柳州', value: 54 },
-              { name: '三亚', value: 54 },
-              { name: '自贡', value: 56 },
-              { name: '吉林', value: 56 },
-              { name: '阳江', value: 57 },
-              { name: '泸州', value: 57 },
-              { name: '西宁', value: 57 },
-              { name: '宜宾', value: 58 },
-              { name: '呼和浩特', value: 58 },
-              { name: '成都', value: 58 },
-              { name: '大同', value: 58 },
-              { name: '镇江', value: 59 },
-              { name: '桂林', value: 59 },
-              { name: '张家界', value: 59 },
-              { name: '宜兴', value: 59 },
-              { name: '北海', value: 60 },
-              { name: '西安', value: 61 },
-              { name: '金坛', value: 62 },
-              { name: '东营', value: 62 },
-              { name: '牡丹江', value: 63 },
-              { name: '遵义', value: 63 },
-              { name: '绍兴', value: 63 },
-              { name: '扬州', value: 64 },
-              { name: '常州', value: 64 },
-              { name: '潍坊', value: 65 },
-              { name: '重庆', value: 66 },
-              { name: '台州', value: 67 },
-              { name: '南京', value: 67 },
-              { name: '滨州', value: 70 },
-              { name: '贵阳', value: 71 },
-              { name: '无锡', value: 71 },
-              { name: '本溪', value: 71 },
-              { name: '克拉玛依', value: 72 },
-              { name: '渭南', value: 72 },
-              { name: '马鞍山', value: 72 },
-              { name: '宝鸡', value: 72 },
-              { name: '焦作', value: 75 },
-              { name: '句容', value: 75 },
-              { name: '北京', value: 79 },
-              { name: '徐州', value: 79 },
-              { name: '衡水', value: 80 },
-              { name: '包头', value: 80 },
-              { name: '绵阳', value: 80 },
-              { name: '乌鲁木齐', value: 84 },
-              { name: '枣庄', value: 84 },
-              { name: '杭州', value: 84 },
-              { name: '淄博', value: 85 },
-              { name: '鞍山', value: 86 },
-              { name: '溧阳', value: 86 },
-              { name: '库尔勒', value: 86 },
-              { name: '安阳', value: 90 },
-              { name: '开封', value: 90 },
-              { name: '济南', value: 92 },
-              { name: '德阳', value: 93 },
-              { name: '温州', value: 95 },
-              { name: '九江', value: 96 },
-              { name: '邯郸', value: 98 },
-              { name: '临安', value: 99 },
-              { name: '兰州', value: 99 },
-              { name: '沧州', value: 100 },
-              { name: '临沂', value: 103 },
-              { name: '南充', value: 104 },
-              { name: '天津', value: 105 },
-              { name: '富阳', value: 106 },
-              { name: '泰安', value: 112 },
-              { name: '诸暨', value: 112 },
-              { name: '郑州', value: 113 },
-              { name: '哈尔滨', value: 114 },
-              { name: '聊城', value: 116 },
-              { name: '芜湖', value: 117 },
-              { name: '唐山', value: 119 },
-              { name: '平顶山', value: 119 },
-              { name: '邢台', value: 119 },
-              { name: '德州', value: 120 },
-              { name: '济宁', value: 120 },
-              { name: '荆州', value: 127 },
-              { name: '宜昌', value: 130 },
-              { name: '义乌', value: 132 },
-              { name: '丽水', value: 133 },
-              { name: '洛阳', value: 134 },
-              { name: '秦皇岛', value: 136 },
-              { name: '株洲', value: 143 },
-              { name: '石家庄', value: 147 },
-              { name: '莱芜', value: 148 },
-              { name: '常德', value: 152 },
-              { name: '保定', value: 153 },
-              { name: '湘潭', value: 154 },
-              { name: '金华', value: 157 },
-              { name: '岳阳', value: 169 },
-              { name: '长沙', value: 175 },
-              { name: '衢州', value: 177 },
-              { name: '廊坊', value: 193 },
-              { name: '菏泽', value: 194 },
-              { name: '合肥', value: 229 },
-              { name: '武汉', value: 273 },
-              { name: '大庆', value: 279 }
+              { name: "海门", value: 9 },
+              { name: "鄂尔多斯", value: 12 },
+              { name: "招远", value: 12 },
+              { name: "舟山", value: 12 },
+              { name: "齐齐哈尔", value: 14 },
+              { name: "盐城", value: 15 },
+              { name: "赤峰", value: 16 },
+              { name: "青岛", value: 18 },
+              { name: "乳山", value: 18 },
+              { name: "金昌", value: 19 },
+              { name: "泉州", value: 21 },
+              { name: "莱西", value: 21 },
+              { name: "日照", value: 21 },
+              { name: "胶南", value: 22 },
+              { name: "南通", value: 23 },
+              { name: "拉萨", value: 24 },
+              { name: "云浮", value: 24 },
+              { name: "梅州", value: 25 },
+              { name: "文登", value: 25 },
+              { name: "上海", value: 25 },
+              { name: "攀枝花", value: 25 },
+              { name: "威海", value: 25 },
+              { name: "承德", value: 25 },
+              { name: "厦门", value: 26 },
+              { name: "汕尾", value: 26 },
+              { name: "潮州", value: 26 },
+              { name: "丹东", value: 27 },
+              { name: "太仓", value: 27 },
+              { name: "曲靖", value: 27 },
+              { name: "烟台", value: 28 },
+              { name: "福州", value: 29 },
+              { name: "瓦房店", value: 30 },
+              { name: "即墨", value: 30 },
+              { name: "抚顺", value: 31 },
+              { name: "玉溪", value: 31 },
+              { name: "张家口", value: 31 },
+              { name: "阳泉", value: 31 },
+              { name: "莱州", value: 32 },
+              { name: "湖州", value: 32 },
+              { name: "汕头", value: 32 },
+              { name: "昆山", value: 33 },
+              { name: "宁波", value: 33 },
+              { name: "湛江", value: 33 },
+              { name: "揭阳", value: 34 },
+              { name: "荣成", value: 34 },
+              { name: "连云港", value: 35 },
+              { name: "葫芦岛", value: 35 },
+              { name: "常熟", value: 36 },
+              { name: "东莞", value: 36 },
+              { name: "河源", value: 36 },
+              { name: "淮安", value: 36 },
+              { name: "泰州", value: 36 },
+              { name: "南宁", value: 37 },
+              { name: "营口", value: 37 },
+              { name: "惠州", value: 37 },
+              { name: "江阴", value: 37 },
+              { name: "蓬莱", value: 37 },
+              { name: "韶关", value: 38 },
+              { name: "嘉峪关", value: 38 },
+              { name: "广州", value: 38 },
+              { name: "延安", value: 38 },
+              { name: "太原", value: 39 },
+              { name: "清远", value: 39 },
+              { name: "中山", value: 39 },
+              { name: "昆明", value: 39 },
+              { name: "寿光", value: 40 },
+              { name: "盘锦", value: 40 },
+              { name: "长治", value: 41 },
+              { name: "深圳", value: 41 },
+              { name: "珠海", value: 42 },
+              { name: "宿迁", value: 43 },
+              { name: "咸阳", value: 43 },
+              { name: "铜川", value: 44 },
+              { name: "平度", value: 44 },
+              { name: "佛山", value: 44 },
+              { name: "海口", value: 44 },
+              { name: "江门", value: 45 },
+              { name: "章丘", value: 45 },
+              { name: "肇庆", value: 46 },
+              { name: "大连", value: 47 },
+              { name: "临汾", value: 47 },
+              { name: "吴江", value: 47 },
+              { name: "石嘴山", value: 49 },
+              { name: "沈阳", value: 50 },
+              { name: "苏州", value: 50 },
+              { name: "茂名", value: 50 },
+              { name: "嘉兴", value: 51 },
+              { name: "长春", value: 51 },
+              { name: "胶州", value: 52 },
+              { name: "银川", value: 52 },
+              { name: "张家港", value: 52 },
+              { name: "三门峡", value: 53 },
+              { name: "锦州", value: 54 },
+              { name: "南昌", value: 54 },
+              { name: "柳州", value: 54 },
+              { name: "三亚", value: 54 },
+              { name: "自贡", value: 56 },
+              { name: "吉林", value: 56 },
+              { name: "阳江", value: 57 },
+              { name: "泸州", value: 57 },
+              { name: "西宁", value: 57 },
+              { name: "宜宾", value: 58 },
+              { name: "呼和浩特", value: 58 },
+              { name: "成都", value: 58 },
+              { name: "大同", value: 58 },
+              { name: "镇江", value: 59 },
+              { name: "桂林", value: 59 },
+              { name: "张家界", value: 59 },
+              { name: "宜兴", value: 59 },
+              { name: "北海", value: 60 },
+              { name: "西安", value: 61 },
+              { name: "金坛", value: 62 },
+              { name: "东营", value: 62 },
+              { name: "牡丹江", value: 63 },
+              { name: "遵义", value: 63 },
+              { name: "绍兴", value: 63 },
+              { name: "扬州", value: 64 },
+              { name: "常州", value: 64 },
+              { name: "潍坊", value: 65 },
+              { name: "重庆", value: 66 },
+              { name: "台州", value: 67 },
+              { name: "南京", value: 67 },
+              { name: "滨州", value: 70 },
+              { name: "贵阳", value: 71 },
+              { name: "无锡", value: 71 },
+              { name: "本溪", value: 71 },
+              { name: "克拉玛依", value: 72 },
+              { name: "渭南", value: 72 },
+              { name: "马鞍山", value: 72 },
+              { name: "宝鸡", value: 72 },
+              { name: "焦作", value: 75 },
+              { name: "句容", value: 75 },
+              { name: "北京", value: 79 },
+              { name: "徐州", value: 79 },
+              { name: "衡水", value: 80 },
+              { name: "包头", value: 80 },
+              { name: "绵阳", value: 80 },
+              { name: "乌鲁木齐", value: 84 },
+              { name: "枣庄", value: 84 },
+              { name: "杭州", value: 84 },
+              { name: "淄博", value: 85 },
+              { name: "鞍山", value: 86 },
+              { name: "溧阳", value: 86 },
+              { name: "库尔勒", value: 86 },
+              { name: "安阳", value: 90 },
+              { name: "开封", value: 90 },
+              { name: "济南", value: 92 },
+              { name: "德阳", value: 93 },
+              { name: "温州", value: 95 },
+              { name: "九江", value: 96 },
+              { name: "邯郸", value: 98 },
+              { name: "临安", value: 99 },
+              { name: "兰州", value: 99 },
+              { name: "沧州", value: 100 },
+              { name: "临沂", value: 103 },
+              { name: "南充", value: 104 },
+              { name: "天津", value: 105 },
+              { name: "富阳", value: 106 },
+              { name: "泰安", value: 112 },
+              { name: "诸暨", value: 112 },
+              { name: "郑州", value: 113 },
+              { name: "哈尔滨", value: 114 },
+              { name: "聊城", value: 116 },
+              { name: "芜湖", value: 117 },
+              { name: "唐山", value: 119 },
+              { name: "平顶山", value: 119 },
+              { name: "邢台", value: 119 },
+              { name: "德州", value: 120 },
+              { name: "济宁", value: 120 },
+              { name: "荆州", value: 127 },
+              { name: "宜昌", value: 130 },
+              { name: "义乌", value: 132 },
+              { name: "丽水", value: 133 },
+              { name: "洛阳", value: 134 },
+              { name: "秦皇岛", value: 136 },
+              { name: "株洲", value: 143 },
+              { name: "石家庄", value: 147 },
+              { name: "莱芜", value: 148 },
+              { name: "常德", value: 152 },
+              { name: "保定", value: 153 },
+              { name: "湘潭", value: 154 },
+              { name: "金华", value: 157 },
+              { name: "岳阳", value: 169 },
+              { name: "长沙", value: 175 },
+              { name: "衢州", value: 177 },
+              { name: "廊坊", value: 193 },
+              { name: "菏泽", value: 194 },
+              { name: "合肥", value: 229 },
+              { name: "武汉", value: 273 },
+              { name: "大庆", value: 279 },
             ];
             var geoCoordMap = {
               海门: [121.15, 31.89],
@@ -409,7 +409,7 @@ const install = function (Vue) {
               菏泽: [115.480656, 35.23375],
               合肥: [117.27, 31.86],
               武汉: [114.31, 30.52],
-              大庆: [125.03, 46.58]
+              大庆: [125.03, 46.58],
             };
 
             var convertData = function (data) {
@@ -419,7 +419,7 @@ const install = function (Vue) {
                 if (geoCoord) {
                   res.push({
                     name: data[i].name,
-                    value: geoCoord.concat(data[i].value)
+                    value: geoCoord.concat(data[i].value),
                   });
                 }
               }
@@ -429,17 +429,17 @@ const install = function (Vue) {
 
             let option = {
               title: {
-                text: '全国主要城市空气质量 - Covid-19',
+                text: "Covid-19国内数据",
                 textStyle: {
-                  color: '#aaa'
+                  color: "#aaa",
                 },
-                subtext: 'data from PM25.in',
-                sublink: 'http://www.pm25.in',
-                left: 'center'
+                subtext: "data from PM25.in",
+                sublink: "http://www.pm25.in",
+                left: "center",
               },
               // 提示信息：
               tooltip: {
-                trigger: 'item'
+                trigger: "item",
               },
               bmap: {
                 center: [104.114129, 37.550339],
@@ -448,133 +448,133 @@ const install = function (Vue) {
                 mapStyle: {
                   styleJson: [
                     {
-                      featureType: 'water',
-                      elementType: 'all',
+                      featureType: "water",
+                      elementType: "all",
                       stylers: {
-                        color: '#d1d1d1'
-                      }
+                        color: "#d1d1d1",
+                      },
                     },
                     {
-                      featureType: 'land',
-                      elementType: 'all',
+                      featureType: "land",
+                      elementType: "all",
                       stylers: {
-                        color: '#f3f3f3'
-                      }
+                        color: "#f3f3f3",
+                      },
                     },
                     {
-                      featureType: 'railway',
-                      elementType: 'all',
+                      featureType: "railway",
+                      elementType: "all",
                       stylers: {
-                        visibility: 'off'
-                      }
+                        visibility: "off",
+                      },
                     },
                     {
-                      featureType: 'highway',
-                      elementType: 'all',
+                      featureType: "highway",
+                      elementType: "all",
                       stylers: {
-                        color: '#fdfdfd'
-                      }
+                        color: "#fdfdfd",
+                      },
                     },
                     {
-                      featureType: 'highway',
-                      elementType: 'labels',
+                      featureType: "highway",
+                      elementType: "labels",
                       stylers: {
-                        visibility: 'off'
-                      }
+                        visibility: "off",
+                      },
                     },
                     {
-                      featureType: 'arterial',
-                      elementType: 'geometry',
+                      featureType: "arterial",
+                      elementType: "geometry",
                       stylers: {
-                        color: '#fefefe'
-                      }
+                        color: "#fefefe",
+                      },
                     },
                     {
-                      featureType: 'arterial',
-                      elementType: 'geometry.fill',
+                      featureType: "arterial",
+                      elementType: "geometry.fill",
                       stylers: {
-                        color: '#fefefe'
-                      }
+                        color: "#fefefe",
+                      },
                     },
                     {
-                      featureType: 'poi',
-                      elementType: 'all',
+                      featureType: "poi",
+                      elementType: "all",
                       stylers: {
-                        visibility: 'off'
-                      }
+                        visibility: "off",
+                      },
                     },
                     {
-                      featureType: 'green',
-                      elementType: 'all',
+                      featureType: "green",
+                      elementType: "all",
                       stylers: {
-                        visibility: 'off'
-                      }
+                        visibility: "off",
+                      },
                     },
                     {
-                      featureType: 'subway',
-                      elementType: 'all',
+                      featureType: "subway",
+                      elementType: "all",
                       stylers: {
-                        visibility: 'off'
-                      }
+                        visibility: "off",
+                      },
                     },
                     {
-                      featureType: 'manmade',
-                      elementType: 'all',
+                      featureType: "manmade",
+                      elementType: "all",
                       stylers: {
-                        color: '#d1d1d1'
-                      }
+                        color: "#d1d1d1",
+                      },
                     },
                     {
-                      featureType: 'local',
-                      elementType: 'all',
+                      featureType: "local",
+                      elementType: "all",
                       stylers: {
-                        color: '#d1d1d1'
-                      }
+                        color: "#d1d1d1",
+                      },
                     },
                     {
-                      featureType: 'arterial',
-                      elementType: 'labels',
+                      featureType: "arterial",
+                      elementType: "labels",
                       stylers: {
-                        visibility: 'off'
-                      }
+                        visibility: "off",
+                      },
                     },
                     {
-                      featureType: 'boundary',
-                      elementType: 'all',
+                      featureType: "boundary",
+                      elementType: "all",
                       stylers: {
-                        color: '#fefefe'
-                      }
+                        color: "#fefefe",
+                      },
                     },
                     {
-                      featureType: 'building',
-                      elementType: 'all',
+                      featureType: "building",
+                      elementType: "all",
                       stylers: {
-                        color: '#d1d1d1'
-                      }
+                        color: "#d1d1d1",
+                      },
                     },
                     {
-                      featureType: 'label',
-                      elementType: 'labels.text.fill',
+                      featureType: "label",
+                      elementType: "labels.text.fill",
                       stylers: {
-                        color: '#999999'
-                      }
-                    }
-                  ]
-                }
+                        color: "#999999",
+                      },
+                    },
+                  ],
+                },
               },
               series: [
                 {
-                  name: 'covid-19',
+                  name: "covid-19",
                   // type: 'scatter',
-                  type: 'map', // 配置图表类型
-                  mapType: 'china', // 中国地图
-                  coordinateSystem: 'bmap',
+                  type: "map", // 配置图表类型
+                  mapType: "china", // 中国地图
+                  coordinateSystem: "bmap",
                   data: convertData(data),
                   symbolSize: function (val) {
                     return val[2] / 10;
                   },
                   encode: {
-                    value: 2
+                    value: 2,
                   },
                   // 配置字体：
                   label: {
@@ -584,37 +584,37 @@ const install = function (Vue) {
                     normal: {
                       show: true,
                       textStyle: {
-                        fontSize: 8
-                      }
-                    }
+                        fontSize: 8,
+                      },
+                    },
                   },
                   // 配置地图样式：
                   itemStyle: {
-                    color: 'purple',
+                    color: "purple",
                     normal: {
-                      areaColor: '#fff', // 区域颜色
-                      borderColor: 'rgba(0,0,0, 0.2)' // 边框颜色
+                      areaColor: "#fff", // 区域颜色
+                      borderColor: "rgba(0,0,0, 0.2)", // 边框颜色
                     },
                     // 阴影数据效果：
                     emphasis: {
-                      areaColor: 'rgba(255, 180, 0, 0.5)',
+                      areaColor: "rgba(255, 180, 0, 0.5)",
                       shadowOffsetX: 0,
                       shadowOffsetY: 0,
                       shadowBlur: 20,
                       borderWidth: 0,
-                      shadowColor: 'rgba(0, 0, 0, 0.5)'
-                    }
+                      shadowColor: "rgba(0, 0, 0, 0.5)",
+                    },
                   },
                   emphasis: {
                     label: {
-                      show: true
-                    }
-                  }
+                      show: true,
+                    },
+                  },
                 },
                 {
-                  name: 'Top 5',
-                  type: 'effectScatter',
-                  coordinateSystem: 'bmap',
+                  name: "Top 5",
+                  type: "effectScatter",
+                  coordinateSystem: "bmap",
                   data: convertData(
                     data
                       .sort(function (a, b) {
@@ -626,26 +626,26 @@ const install = function (Vue) {
                     return val[2] / 10;
                   },
                   encode: {
-                    value: 2
+                    value: 2,
                   },
-                  showEffectOn: 'render',
+                  showEffectOn: "render",
                   rippleEffect: {
-                    brushType: 'stroke'
+                    brushType: "stroke",
                   },
                   // hoverAnimation: true,  已弃用
                   label: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: true
+                    formatter: "{b}",
+                    position: "right",
+                    show: true,
                   },
                   itemStyle: {
-                    color: 'purple',
+                    color: "purple",
                     shadowBlur: 10,
-                    shadowColor: '#333'
+                    shadowColor: "#333",
                   },
-                  zlevel: 1
-                }
-              ]
+                  zlevel: 1,
+                },
+              ],
             };
 
             // 通过setOption使用：
@@ -659,24 +659,24 @@ const install = function (Vue) {
             let option = {
               // 图表主标题
               title: {
-                text: '世界地图', // 主标题文本，支持使用 \n 换行
+                text: "世界地图", // 主标题文本，支持使用 \n 换行
                 top: 20, // 定位 值: 'top', 'middle', 'bottom' 也可以是具体的值或者百分比
-                left: 'center', // 值: 'left', 'center', 'right' 同上
+                left: "center", // 值: 'left', 'center', 'right' 同上
                 textStyle: {
                   // 文本样式
                   fontSize: 24,
                   fontWeight: 600,
-                  color: '#fff'
-                }
+                  color: "#fff",
+                },
               },
               // 提示框组件
               tooltip: {
-                trigger: 'item', // 触发类型, 数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用
+                trigger: "item", // 触发类型, 数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用
                 // 提示框浮层内容格式器，支持字符串模板和回调函数两种形式
                 // 使用函数模板  传入的数据值 -> value: number | Array
                 formatter: function (val) {
-                  return val.data.name + ': ' + val.data.value;
-                }
+                  return val.data.name + ": " + val.data.value;
+                },
               },
               // 视觉映射组件
               // visualMap: {
@@ -700,46 +700,46 @@ const install = function (Vue) {
               // },
               series: [
                 {
-                  type: 'map', // 类型
+                  type: "map", // 类型
                   // 系列名称，用于tooltip的显示，legend 的图例筛选 在 setOption 更新数据和配置项时用于指定对应的系列
-                  name: '世界地图',
-                  mapType: 'world', // 地图类型
+                  name: "世界地图",
+                  mapType: "world", // 地图类型
                   // 是否开启鼠标缩放和平移漫游 默认不开启 如果只想要开启缩放或者平移，可以设置成 'scale' 或者 'move' 设置成 true 为都开启
                   roam: true,
                   // 图形上的文本标签
                   label: {
-                    show: false // 是否显示对应地名
+                    show: false, // 是否显示对应地名
                   },
                   // 地图区域的多边形 图形样式
                   itemStyle: {
-                    areaColor: '#7B68EE', // 地图区域的颜色 如果设置了visualMap，areaColor属性将不起作用
+                    areaColor: "#7B68EE", // 地图区域的颜色 如果设置了visualMap，areaColor属性将不起作用
                     borderWidth: 0.5, // 描边线宽 为 0 时无描边
-                    borderColor: '#000', // 图形的描边颜色 支持的颜色格式同 color，不支持回调函数
-                    borderType: 'solid' // 描边类型，默认为实线，支持 'solid', 'dashed', 'dotted'
+                    borderColor: "#000", // 图形的描边颜色 支持的颜色格式同 color，不支持回调函数
+                    borderType: "solid", // 描边类型，默认为实线，支持 'solid', 'dashed', 'dotted'
                   },
                   // 高亮状态下的多边形和标签样式
                   emphasis: {
                     label: {
                       show: true, // 是否显示标签
-                      color: '#fff' // 文字的颜色 如果设置为 'auto'，则为视觉映射得到的颜色，如系列色
+                      color: "#fff", // 文字的颜色 如果设置为 'auto'，则为视觉映射得到的颜色，如系列色
                     },
                     itemStyle: {
-                      areaColor: '#FF6347' // 地图区域的颜色
-                    }
-                  }
+                      areaColor: "#FF6347", // 地图区域的颜色
+                    },
+                  },
                   // 自定义地区的名称映射
                   // nameMap: name,
                   // // 地图系列中的数据内容数组 数组项可以为单个数值
                   // data: data
-                }
-              ]
+                },
+              ],
             };
 
             myEcharts.setOption(option);
-          }
+          },
         };
-      }
-    }
+      },
+    },
   });
 };
 
